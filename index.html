@@ -1,4 +1,40 @@
-<html><center><span style="font-size: medium;">EMYE FM</span><center>
+name='showType'>ALL</b:widget-setting>
+            <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='this'>
+          <details class='collapsible extendable'>
+            <b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
+            <b:with value='true' var='renderAsDetails'>
+            <b:with value='data:messages.labels' var='defaultTitle'>
+              <b:include name='super.main'/>
+            </b:with>
+            </b:with>
+          </details>
+        </b:includable>
+          <b:includable id='cloud'>
+          <b:include data='{                               buttonClass: &quot;pill-button&quot;,                               items: data:this.labels,                               itemSet: &quot;labels&quot;,                               itemsMarkup: &quot;super.cloud&quot;                             }' name='extendableItems'/>
+        </b:includable>
+          <b:includable id='content'>
+  <div class='widget-content'>
+    <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/>
+    <b:include cond='data:this.display == &quot;list&quot;' name='list'/>
+    <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/>
+  </div>
+</b:includable>
+          <b:includable id='list'>
+          <b:include data='{                               buttonClass: &quot;pill-button&quot;,                               items: data:this.labels,                               itemSet: &quot;labels&quot;,                               itemsMarkup: &quot;super.list&quot;                             }' name='extendableItems'/>
+        </b:includable>
+        </b:widget>
+        <b:widget id='ReportAbuse1' locked='false' title='' type='ReportAbuse' visible='false'>
+          <b:includable id='main'>
+  <b:include name='reportAbuse'/>
+</b:includable>
+        </b:widget>
+      </b:section>
+    </aside>
+
+    <b:template-script async='true' name='indie' version='1.0.0'/>
+<center><span style="font-size: medium;">EMYE FM</span><center>
 <br />
 <script type="text/javascript">var cstruid = 572922;var cstrdark = "FALSE";</script>
 <script src="//cdn.caster.fm/0070B7/widgets/status.js" type="text/javascript"></script>
@@ -17,4 +53,5 @@
  <script async="" data-cfasync="true" id="cid0020000333273145838" src="//st.chatango.com/js/gz/emb.js" style="height: 200px; width: 1150px;">{"handle":"emye-fm","arch":"js","styles":{"a":"99CC33","b":100,"c":"000000","d":"000000","k":"99CC33","l":"99CC33","m":"99CC33","p":"10","q":"99CC33","r":100,"usricon":0,"allowpm":0}}</script>
 
 </center>
+</body>
 </html>
