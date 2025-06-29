@@ -1,0 +1,8 @@
+
+body { margin: 0; font-family: Arial, sans-serif; background: #111; color: white; }
+header { background: #222; padding: 1em; text-align: center; }
+header input { width: 50%; padding: 0.5em; font-size: 1em; }
+.game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1em; padding: 1em; }
+.game-card { text-decoration: none; color: white; text-align: center; }
+.game-card img { width: 100%; border-radius: 8px; }
+footer { text-align: center; padding: 1em; background: #222; font-size: 0.8em; }

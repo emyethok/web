@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Game</title>
+  <script src="emulatorjs/emulator.js"></script>
+  <style>
+    body { background: #000; color: white; font-family: sans-serif; text-align: center; }
+    #emulator { width: 90%; max-width: 960px; height: 720px; margin: auto; }
+  </style>
+</head>
+<body>
+  <h1 id="gametitle">Loading...</h1>
+  <div id="emulator"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const rom = params.get('rom');
+    const title = params.get('title');
+    document.getElementById('gametitle').innerText = title;
+
+    EJS_player = '#emulator';
+    EJS_core = rom.includes('nes') ? 'nes' :
+               rom.includes('snes') ? 'snes' :
+               rom.includes('gba') ? 'gba' :
+               rom.includes('sega') ? 'sega' : 'nes';
+    EJS_gameUrl = `https://archive.org/download/retrogames-roms/${rom}`; // ROM eksternal
+    EJS_load();
+  </script>
+</body>
+</html>
